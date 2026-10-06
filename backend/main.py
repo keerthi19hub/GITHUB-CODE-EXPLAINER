@@ -1,3 +1,13 @@
+"""
+backend/main.py
+===============
+FastAPI application providing a RESTful API layer for the repository explainer.
+
+This file demonstrates backend API architecture and is useful for local API
+development/testing, while the public Streamlit app uses backend/service.py
+directly so no separate server process is required.
+"""
+
 from __future__ import annotations
 
 from fastapi import FastAPI, HTTPException
@@ -5,7 +15,11 @@ from pydantic import BaseModel, HttpUrl
 
 from backend.service import analyze_repository
 
-app = FastAPI(title="GitHub Code Explainer API", version="2.0.0")
+app = FastAPI(
+    title="GitHub Code Explainer API",
+    description="REST API for analyzing and explaining public GitHub repositories using local LLM inference.",
+    version="1.0.0",
+)
 
 
 class ExplainRequest(BaseModel):
@@ -14,7 +28,11 @@ class ExplainRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "GitHub Code Explainer API is available for optional local API use."}
+    return {
+        "title": "GitHub Code Explainer API",
+        "status": "online",
+        "description": "FastAPI service layer for GitHub repository code explanation",
+    }
 
 
 @app.get("/api/health")

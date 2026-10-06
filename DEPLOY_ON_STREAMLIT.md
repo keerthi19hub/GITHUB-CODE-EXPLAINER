@@ -1,12 +1,29 @@
-# Streamlit Community Cloud deployment
+# Streamlit Community Cloud Deployment Guide
 
-1. Push this repository to GitHub.
-2. In Streamlit Community Cloud choose `pragathidevanga/GitHub-Code_Explainer`.
-3. Branch: `main`.
-4. Main file: `app.py`.
-5. No secrets are required.
-6. Deploy.
+Follow these steps to deploy your application publicly:
 
-The deployed path is self-contained. Do not configure BACKEND_URL, Ollama, ngrok, cloudflared, or another server.
+1. **Push your code to GitHub:**
+   Make sure all latest commits are pushed to:
+   `https://github.com/keerthi19hub/GITHUB-CODE-EXPLAINER`
+   Branch: `main`
 
-The first analysis may take longer because the Hugging Face model is downloaded and initialized. Streamlit caches the model for the runtime.
+2. **Open Streamlit Community Cloud:**
+   Visit: [https://share.streamlit.io](https://share.streamlit.io) and log in with your GitHub account.
+
+3. **Deploy New App:**
+   Click **"Create app"** or **"New app"**.
+
+4. **Fill in App Settings:**
+   - **Repository:** `keerthi19hub/GITHUB-CODE-EXPLAINER`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+   - **Python version:** `3.12`
+
+5. **Secrets & Environment Variables:**
+   - **None required!** Leave secrets blank.
+
+6. **Click "Deploy!":**
+   Streamlit Cloud will automatically clone the repository, install `requirements.txt`, and start `app.py`.
+
+7. **Share Your Link:**
+   Once the build completes, copy the generated public Streamlit URL and test it from any browser.
